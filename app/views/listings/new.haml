@@ -1,0 +1,34 @@
+- content_for :extra_javascript do
+  :javascript
+    $(document).ready(function() {
+      initialize_new_listing_form_selectors("#{I18n.locale}", #{@current_community.category_tree(I18n.locale).to_json}, #{listing_form_menu_titles(@current_community.available_categorization_values).to_json});
+    });
+
+- content_for :extra_javascript do
+  = javascript_include_tag "https://maps.google.com/maps/api/js?sensor=true"
+
+- content_for :title_header do
+  %h1= t("listings.new.post_a_new_listing")
+
+- available_categorizations = @current_community.available_categorizations
+#new_listing_form.new-listing-form.centered-section
+
+  #selected-groups
+    - available_categorizations.each do |attribute, values|
+      - if values.size > 1
+        .selected-group{:name => attribute}
+          - values.each do |value|
+            %a.select.selected.hidden{:href => "#", :data => {:id => value.id}}
+              .link-text= t(".selected_#{attribute}", attribute.to_sym => value.display_name(I18n.locale))
+
+  %h2.listing-form-title{:id => "foo"}
+
+  #option-groups
+    - available_categorizations.each do |attribute, values|
+      - if values.size > 1
+        .option-group{:name => attribute}
+          - values.each do |value|
+            %a.select.option.hidden{:href => "#", :data => {:id => value.id}}
+              .link-text= value.display_name(I18n.locale)
+
+  .form-fields
