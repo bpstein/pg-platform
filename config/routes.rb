@@ -1,6 +1,8 @@
 require 'routes/api_request'
+require 'sidekiq/web' if Rails.env.development?
 
 Kassi::Application.routes.draw do
+  mount Sidekiq::Web, at: '/sidekiq' if Rails.env.development?
 
   namespace :mercury do
     resources :images
@@ -373,4 +375,6 @@ Kassi::Application.routes.draw do
   #keep this matcher last
   #catches all non matched routes, shows 404 and logs more reasonably than the alternative RoutingError + stacktrace
   match "*path" => "errors#not_found"
+
+  
 end
