@@ -1010,8 +1010,9 @@ en:
       all_categories: "All categories"
   infos:
     about:
-      default_about_text_title: "What is Sharetribe?"
-      default_about_text: "This marketplace is powered by Sharetribe platform. With Sharetribe you can easily create your own marketplace website. It's free and only takes a minute. %{click_here_link} to learn more!"
+      default_about_text_title: 
+      default_about_text: PeerGear is a sharing platform to facilitate the short term rental of outdoors equipment all over the world. If you own gear and don’t use it all the time sharing is a great way to make easy money by lending out the gear you already have. We believe that too much quality gear is sitting idle in closets and garages when it should be outside being enjoyed. For your peace of mind all transactions are protected by a security deposit. If you want to rent gear to use at your holiday destination then PeerGear provides you access to local gear at attractive prices without the hassle and cost of carrying sports equipment with you.
+
       click_here_link_text: "Click here"
     how_to_use:
       default_title: "How it works"
