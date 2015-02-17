@@ -344,6 +344,7 @@ GEM
     multi_test (0.1.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    mysql2 (0.3.18)
     nenv (0.1.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -656,6 +657,7 @@ DEPENDENCIES
   mercury-rails
   money-rails
   multi_json (~> 1.7.3)
+  mysql2 (~> 0.3.13)
   newrelic_rpm (~> 3.9.1.236)
   omniauth-facebook
   paperclip

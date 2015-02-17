@@ -84,10 +84,11 @@ gem 'airbrake', '~>4.1.0'
 gem 'sidekiq'
 gem 'redis'
 gem 'redis-rails'
+gem 'mysql2', '~> 0.3.13'
+gem 'pg'
 
 group :staging, :production do
   gem 'newrelic_rpm', '~> 3.9.1.236'
-  gem 'pg'
   gem 'rails_12factor'
 end
 
@@ -106,7 +107,6 @@ group :development do
   gem 'i18n-tasks', '~> 0.6.2'
   gem 'sinatra', require: false
   gem 'slim'
-  gem 'pg'
 end
 
 group :test do
