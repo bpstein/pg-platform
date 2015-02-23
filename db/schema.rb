@@ -226,7 +226,7 @@ ActiveRecord::Schema.define(:version => 20150103143459) do
     t.integer "listing_id"
   end
 
-  add_index "index_communities_listings_on_community_id", ["community_id"], :name => "index_communities_listings_on_community_id"
+  # add_index "communities_listings", ["community_id"], :name => "index_communities_listings_on_community_id"
   add_index "communities_listings", ["listing_id", "community_id"], :name => "communities_listings"
 
   create_table "community_customizations", :force => true do |t|
