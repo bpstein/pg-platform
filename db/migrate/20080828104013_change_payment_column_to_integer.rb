@@ -1,6 +1,6 @@
 class ChangePaymentColumnToInteger < ActiveRecord::Migration
   def self.up
-    change_column :favors, :payment, :integer
+    change_column :favors, :payment, 'integer USING CAST("column_to_change" AS integer)'
   end
 
   def self.down
