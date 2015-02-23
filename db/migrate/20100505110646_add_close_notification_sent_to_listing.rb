@@ -1,6 +1,6 @@
 class AddCloseNotificationSentToListing < ActiveRecord::Migration
   def self.up
-    add_column :listings, :close_notification_sent, :boolean, :default => 0
+    add_column :listings, :close_notification_sent, :boolean, :default => false
   end
 
   def self.down

@@ -1,6 +1,6 @@
 class AddPrivateToCommunities < ActiveRecord::Migration
   def self.up
-    add_column :communities, :private, :boolean, :default => 0
+    add_column :communities, :private, :boolean, :default => false
   end
 
   def self.down

@@ -4,6 +4,6 @@ class RemoveTransactionProposalFromConversations < ActiveRecord::Migration
   end
 
   def self.down
-    add_column :conversations, :transaction_proposal, :boolean, :default => 1
+    add_column :conversations, :transaction_proposal, :boolean, :default => true
   end
 end

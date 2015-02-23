@@ -3,7 +3,7 @@ class CreatePolls < ActiveRecord::Migration
     create_table :polls do |t|
       t.string :title
       t.string :author_id
-      t.boolean :active, :default => 1
+      t.boolean :active, :default => true
       t.string :community_id
       t.datetime :closed_at
 

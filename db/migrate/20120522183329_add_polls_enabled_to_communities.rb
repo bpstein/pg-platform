@@ -1,6 +1,6 @@
 class AddPollsEnabledToCommunities < ActiveRecord::Migration
   def self.up
-    add_column :communities, :polls_enabled, :boolean, :default => 0
+    add_column :communities, :polls_enabled, :boolean, :default => false
   end
 
   def self.down

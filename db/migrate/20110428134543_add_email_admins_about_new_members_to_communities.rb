@@ -1,6 +1,6 @@
 class AddEmailAdminsAboutNewMembersToCommunities < ActiveRecord::Migration
   def self.up
-    add_column :communities, :email_admins_about_new_members, :boolean, :default => 0
+    add_column :communities, :email_admins_about_new_members, :boolean, :default => false
   end
 
   def self.down
