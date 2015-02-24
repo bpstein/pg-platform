@@ -822,7 +822,7 @@ ActiveRecord::Schema.define(:version => 20150103143459) do
     t.datetime "updated_at",          :null => false
   end
 
-  add_index "transaction_type_translations", ["transaction_type_id", "locale"], :name => "locale_index"
+  #add_index "transaction_type_translations", ["transaction_type_id", "locale"], :name => "locale_index"
   add_index "transaction_type_translations", ["transaction_type_id"], :name => "index_transaction_type_translations_on_transaction_type_id"
 
   create_table "transaction_types", :force => true do |t|
