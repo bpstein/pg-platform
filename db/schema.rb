@@ -328,7 +328,7 @@ ActiveRecord::Schema.define(:version => 20150103143459) do
     t.datetime "updated_at",             :null => false
   end
 
-  add_index "custom_field_option_titles", ["custom_field_option_id", "locale"], :name => "locale_index"
+  #add_index "custom_field_option_titles", ["custom_field_option_id", "locale"], :name => "locale_index"
   add_index "custom_field_option_titles", ["custom_field_option_id"], :name => "index_custom_field_option_titles_on_custom_field_option_id"
 
   create_table "custom_field_options", :force => true do |t|
