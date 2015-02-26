@@ -85,14 +85,14 @@ Kassi::Application.configure do
   # end
   config.action_mailer.delivery_method = :smtp
   
-  config.action_mailer.default_url_options = { :host => "pg-platform.herokuapp.com" }
+  #config.action_mailer.default_url_options = { :host => "pg-platform.herokuapp.com" }
  
     ActionMailer::Base.smtp_settings = {
-      :address              => "smtp.gmail.com",
+      :address              => "smtp.mandrillapp.com",
       :port                 => 587,
-      :domain               => "pg-platform.herokuapp.com",
-      :user_name            => "unchainedbeliever@gmail.com",
-      :password             => "chandan@#$07071988",
+      :domain               => "www.opensoftindia.com",
+      :user_name            => "admin@opensoftindia.com",
+      :password             => "DJsRNDbvZEx59BRSQ7_QNQ",
       :authentication       => :plain,
       :enable_starttls_auto => true
     }
