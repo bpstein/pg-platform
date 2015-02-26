@@ -97,7 +97,7 @@ Kassi::Application.configure do
       :openssl_verify_mode => 'none', 
       :enable_starttls_auto => true
     }
-  end
+  
 
   # Sendmail is used for some mails (e.g. Newsletter) so configure it even when postmark is the main method
   # ActionMailer::Base.sendmail_settings = {

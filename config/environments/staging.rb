@@ -65,7 +65,7 @@ Kassi::Application.configure do
 
   #config.action_mailer.delivery_method = mail_delivery_method
   config.action_mailer.delivery_method = :smtp
-  
+
   config.action_mailer.default_url_options = { :host => "pg-platform.herokuapp.com" }
   # if mail_delivery_method == :postmark
   #   config.action_mailer.postmark_settings = { :api_key => APP_CONFIG.postmark_api_key }
@@ -87,7 +87,7 @@ Kassi::Application.configure do
       :openssl_verify_mode => 'none', 
       :enable_starttls_auto => true
     }
-  end
+  
 
   # Sendmail is used for some mails (e.g. Newsletter) so configure it even when postmark is the main method
   # ActionMailer::Base.sendmail_settings = {
