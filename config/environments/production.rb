@@ -94,7 +94,6 @@ Kassi::Application.configure do
       :user_name            => "andrew@opensoftindia.com",
       :password             => "12345678",
       :authentication       => :login,
-      :ssl                  => true,
       :tls                  =>true,
       :enable_starttls_auto => true
     }
