@@ -91,10 +91,9 @@ Kassi::Application.configure do
       :address              => "smtp.gmail.com",
       :port                 => 587,
       :domain               => "pg-platform.herokuapp.com",
-      :user_name            => "unchainedbeliever@gmail.com",
-      :password             => "chandan@#$07071988",
+      :user_name            => "nagdewanimanis@gmail.com",
+      :password             => "astriks123",
       :authentication       => 'plain',
-      :openssl_verify_mode => 'none', 
       :enable_starttls_auto => true
     }
   
