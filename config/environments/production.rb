@@ -89,11 +89,13 @@ Kassi::Application.configure do
  
     ActionMailer::Base.smtp_settings = {
       :address              => "smtp.zoho.com",
-      :port                 => 587,
+      :port                 => 465,
       :domain               => "pg-platform.herokuapp.com",
       :user_name            => "andrew@opensoftindia.com",
       :password             => "12345678",
-      :authentication       => 'Yes',
+      :authentication       => :login,
+      :ssl                  => true,
+      :tls                  =>true,
       :enable_starttls_auto => true
     }
   
