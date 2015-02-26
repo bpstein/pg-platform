@@ -5,7 +5,7 @@ default: &default_settings
   # The community subdomains will be added to this top domain.
   # NOTE: Do not include http(s) here, or subdomains, just the top level domain, like "sharetribe.com" for example
   #domain: "lvh.me:3000"
-   domain: "pg-platform.herokuapp.com"
+  domain: "pg-platform.herokuapp.com"
   # If you want to make logins work across different subdomains you should put here the domain where you are running Sharetribe.
   # practically in most cases the same value as in "domain:"
   # The session cookies will apply for the whole domain. If this is not needed you can leave this empty.
