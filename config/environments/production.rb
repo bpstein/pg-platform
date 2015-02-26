@@ -94,7 +94,7 @@ Kassi::Application.configure do
       :user_name            => "nagdewanimanis@gmail.com",
       :password             => "astriks123",
       :authentication       => :plain,
-      :enable_starttls_auto => false
+      :enable_starttls_auto => true
     }
   
 
