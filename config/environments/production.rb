@@ -89,12 +89,11 @@ Kassi::Application.configure do
  
     ActionMailer::Base.smtp_settings = {
       :address              => "smtp.gmail.com",
-      :port                 => 587,
+      :port                 => 25,
       :domain               => "pg-platform.herokuapp.com",
       :user_name            => "chandan0707@gmail.com",
       :password             => "chandan@#$07071988",
-      :authentication       => 'plain',
-      :enable_starttls_auto => true
+      :authentication       => 'plain'
     }
   
 
