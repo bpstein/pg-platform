@@ -67,28 +67,43 @@ Kassi::Application.configure do
 
   config.action_mailer.raise_delivery_errors = true
 
-  mail_delivery_method = (APP_CONFIG.mail_delivery_method.present? ? APP_CONFIG.mail_delivery_method.to_sym : :sendmail)
+  # mail_delivery_method = (APP_CONFIG.mail_delivery_method.present? ? APP_CONFIG.mail_delivery_method.to_sym : :sendmail)
 
-  config.action_mailer.delivery_method = mail_delivery_method
-  if mail_delivery_method == :postmark
-    config.action_mailer.postmark_settings = { :api_key => APP_CONFIG.postmark_api_key }
-  elsif mail_delivery_method == :smtp
+  # config.action_mailer.delivery_method = mail_delivery_method
+  # if mail_delivery_method == :postmark
+  #   config.action_mailer.postmark_settings = { :api_key => APP_CONFIG.postmark_api_key }
+  # elsif mail_delivery_method == :smtp
+  #   ActionMailer::Base.smtp_settings = {
+  #     :address              => APP_CONFIG.smtp_email_address,
+  #     :port                 => APP_CONFIG.smtp_email_port,
+  #     :domain               => APP_CONFIG.smtp_email_domain,
+  #     :user_name            => APP_CONFIG.smtp_email_user_name,
+  #     :password             => APP_CONFIG.smtp_email_password,
+  #     :authentication       => 'plain',
+  #     :enable_starttls_auto => true
+  #   }
+  # end
+  config.action_mailer.delivery_method = :smtp
+  
+  config.action_mailer.default_url_options = { :host => "pg-platform.herokuapp.com" }
+ 
     ActionMailer::Base.smtp_settings = {
-      :address              => APP_CONFIG.smtp_email_address,
-      :port                 => APP_CONFIG.smtp_email_port,
-      :domain               => APP_CONFIG.smtp_email_domain,
-      :user_name            => APP_CONFIG.smtp_email_user_name,
-      :password             => APP_CONFIG.smtp_email_password,
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => "pg-platform.herokuapp.com",
+      :user_name            => "unchainedbeliever@gmail.com",
+      :password             => "chandan@#$07071988",
       :authentication       => 'plain',
+      :openssl_verify_mode => 'none', 
       :enable_starttls_auto => true
     }
   end
 
   # Sendmail is used for some mails (e.g. Newsletter) so configure it even when postmark is the main method
-  ActionMailer::Base.sendmail_settings = {
-    :location       => '/usr/sbin/sendmail',
-    :arguments      => '-i -t'
-  }
+  # ActionMailer::Base.sendmail_settings = {
+  #   :location       => '/usr/sbin/sendmail',
+  #   :arguments      => '-i -t'
+  # }
 
   ActionMailer::Base.perform_deliveries = true # the "deliver_*" methods are available
 end
