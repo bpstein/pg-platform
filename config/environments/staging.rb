@@ -68,11 +68,18 @@ Kassi::Application.configure do
     config.action_mailer.postmark_settings = { :api_key => APP_CONFIG.postmark_api_key }
   elsif mail_delivery_method == :smtp
     ActionMailer::Base.smtp_settings = {
-      :address              => APP_CONFIG.smtp_email_address,
-      :port                 => APP_CONFIG.smtp_email_port,
-      :domain               => APP_CONFIG.smtp_email_domain,
-      :user_name            => APP_CONFIG.smtp_email_user_name,
-      :password             => APP_CONFIG.smtp_email_password,
+      # :address              => APP_CONFIG.smtp_email_address,
+      # :port                 => APP_CONFIG.smtp_email_port,
+      # :domain               => APP_CONFIG.smtp_email_domain,
+      # :user_name            => APP_CONFIG.smtp_email_user_name,
+      # :password             => APP_CONFIG.smtp_email_password,
+      # :authentication       => 'plain',
+      # :enable_starttls_auto => true
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => "pg-platform.herokuapp.com",
+      :user_name            => "nagdewanimanis@gmail.com",
+      :password             => "astriks123",
       :authentication       => 'plain',
       :enable_starttls_auto => true
     }
