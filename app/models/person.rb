@@ -172,7 +172,7 @@ class Person < ActiveRecord::Base
                       :thumb => "48x48#",
                       :original => "600x800>"},
                     :storage => :s3,
-                    :s3_credentials => "#{RAILS_ROOT}/config/config.defaults.yml",
+                    :s3_credentials => "#{Rails.root}/config/config.defaults.yml",
                     :path => ":rails_root/public/system/images/:id/:basename_:style.:extension",
                     :url => "/system/:images/:id/:basename_:style.:extension",
                     :bucket => 'pg_listings',
