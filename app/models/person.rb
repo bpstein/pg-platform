@@ -166,13 +166,28 @@ class Person < ActiveRecord::Base
 
   validates :username, :exclusion => USERNAME_BLACKLIST
   validate :community_email_type_is_correct
-
-  has_attached_file :image, :styles => {
+  if Rails.env.production?
+    has_attached_file :image, :styles => {:medium => "288x288#",
+                      :small => "108x108#",
+                      :thumb => "48x48#",
+                      :original => "600x800>"},
+                    :storage => :s3,
+                    :s3_credentials => "#{RAILS_ROOT}/config/config.defaults.yml",
+                    :path => ":rails_root/public/system/images/:id/:basename_:style.:extension",
+                    :url => "/system/:images/:id/:basename_:style.:extension",
+                    :bucket => 'pg_listings',
+                    :default_url => ActionController::Base.helpers.asset_path("/assets/profile_image/:style/missing.png", :digest => true)
+  else
+    has_attached_file :image, :styles => {
                       :medium => "288x288#",
                       :small => "108x108#",
                       :thumb => "48x48#",
                       :original => "600x800>"},
+                      :url => "/system/:images/:id/:basename_:style.:extension",
+
                     :default_url => ActionController::Base.helpers.asset_path("/assets/profile_image/:style/missing.png", :digest => true)
+  end
+
 
   #validates_attachment_presence :image
   validates_attachment_size :image, :less_than => 9.megabytes

@@ -3,6 +3,7 @@ window.ST = window.ST || {};
 /**
   Returns a new element for image uploading/preview
 */
+
 window.ST.renderImagePlaceholder = function() {
   var template = $("#new-image-tmpl").html();
   var element = $(template);

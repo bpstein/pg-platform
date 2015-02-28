@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   include PeopleHelper
-
+ 
   # Skip auth token check as current jQuery doesn't provide it automatically
   skip_before_filter :verify_authenticity_token, :only => [:close, :update, :follow, :unfollow]
 
@@ -27,6 +27,7 @@ class ListingsController < ApplicationController
   before_filter :ensure_is_admin, :only => [ :move_to_top, :show_in_updates_email ]
 
   before_filter :is_authorized_to_post, :only => [ :new, :create ]
+
 
   def index
     if params[:format] == "atom" # API request for feed
@@ -297,7 +298,7 @@ class ListingsController < ApplicationController
   end
 
   private
-
+  
   def minimum_commission
     payment_type = MarketplaceService::Community::Query.payment_type(@current_community.id)
     currency = @current_community.default_currency

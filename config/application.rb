@@ -153,5 +153,7 @@ module Kassi
     end
 
     config.exceptions_app = self.routes
+
+   
   end
 end
