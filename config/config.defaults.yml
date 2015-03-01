@@ -42,8 +42,8 @@ default: &default_settings
   s3_upload_bucket_name: pg_listings
 
   # AWS keys
-  aws_access_key_id: AKIAJJIMA6DVZS5XZ2BA
-  aws_secret_access_key: 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
+  aws_access_key_id: AKIAICSRTYTVC34FYTAA
+  aws_secret_access_key: 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
 
   # This is used with AWS SNS notifications. You need to create "email bounces and complaints" topic to SNS
   # and subscribe an url (https://yourdomain.com/bounces?sns_notification_token=[this_token])
