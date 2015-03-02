@@ -191,6 +191,7 @@ class PeopleController < Devise::RegistrationsController
 
     begin
       if @person.update_attributes(params[:person])
+        
         if params[:person][:password]
           #if password changed Devise needs a new sign in.
           sign_in @person, :bypass => true

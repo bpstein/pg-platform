@@ -65,6 +65,7 @@ Kassi::Application.configure do
   # the I18n.default_locale when a translation can not be found)
   # config.i18n.fallbacks = true #fallbacks defined in intitializers/i18n.rb
 
+  
   config.action_mailer.raise_delivery_errors = true
 
   # mail_delivery_method = (APP_CONFIG.mail_delivery_method.present? ? APP_CONFIG.mail_delivery_method.to_sym : :sendmail)
@@ -105,4 +106,6 @@ Kassi::Application.configure do
   # }
 
   ActionMailer::Base.perform_deliveries = true # the "deliver_*" methods are available
+
+
 end

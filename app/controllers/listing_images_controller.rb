@@ -21,12 +21,12 @@ class ListingImagesController < ApplicationController
   # Create image from given url
   def add_from_url
     url = escape_s3_url(params[:path], params[:filename])
-
+    
     if !url.present?
       render json: {:errors => "No image URL provided"}, status: 400, content_type: 'text/plain'
     end
-
-    add_image(params[:listing_id], {}, url)
+    
+    add_image(params[:listing_id], {}, url,params[:filename])
   end
 
   # Add new listing image to existing listing
@@ -55,16 +55,16 @@ class ListingImagesController < ApplicationController
     path.sub("${filename}", escaped_filename)
   end
 
-  def add_image(listing_id, params, url)
+  def add_image(listing_id, params, url,file)
     # if listing_id
     #   ListingImage.destroy_all(listing_id: listing_id)
     # end
-
+    
     listing_image_params = params.merge(
       author: @current_user,
       listing_id: listing_id
     )
-
+    
     new_image(listing_image_params, url)
   end
 
@@ -73,8 +73,9 @@ class ListingImagesController < ApplicationController
     listing_image = ListingImage.new(params)
 
     listing_image.image_downloaded = if url.present? then false else true end
-
+    
     if listing_image.save
+      
       unless listing_image.image_downloaded
         listing_image.delay.download_from_url(url)
       end
@@ -100,4 +101,5 @@ class ListingImagesController < ApplicationController
       listing.author == @current_user
     end
   end
+
 end
