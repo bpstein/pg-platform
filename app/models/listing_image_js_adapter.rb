@@ -7,8 +7,10 @@ class ListingImageJSAdapter < JSAdapter
     #@ready = !listing_image.image_processing && listing_image.image_downloaded;
     @ready = true
     @images = {
-      thumb: listing_image.image.url(:thumb),
-      big: listing_image.image.url(:big)
+      # thumb: listing_image.image.path(:thumb),
+      # big: listing_image.image.path(:big)
+      thumb: listing_image.s3_path,
+      big: listing_image.s3_path
     }
     @urls = {
       remove: listing_image_path(listing_image.id),

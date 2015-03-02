@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150103143459) do
+ActiveRecord::Schema.define(:version => 20150302140740) do
 
   create_table "auth_tokens", :force => true do |t|
     t.string   "token"
@@ -226,9 +226,6 @@ ActiveRecord::Schema.define(:version => 20150103143459) do
     t.integer "listing_id"
   end
 
-  # add_index "communities_listings", ["community_id"], :name => "index_communities_listings_on_community_id"
-  # add_index "communities_listings", ["listing_id", "community_id"], :name => "communities_listings"
-
   create_table "community_customizations", :force => true do |t|
     t.integer  "community_id"
     t.string   "locale"
@@ -328,7 +325,6 @@ ActiveRecord::Schema.define(:version => 20150103143459) do
     t.datetime "updated_at",             :null => false
   end
 
-  #add_index "custom_field_option_titles", ["custom_field_option_id", "locale"], :name => "locale_index"
   add_index "custom_field_option_titles", ["custom_field_option_id"], :name => "index_custom_field_option_titles_on_custom_field_option_id"
 
   create_table "custom_field_options", :force => true do |t|
@@ -457,6 +453,7 @@ ActiveRecord::Schema.define(:version => 20150103143459) do
     t.integer  "width"
     t.integer  "height"
     t.string   "author_id"
+    t.string   "s3_path"
   end
 
   add_index "listing_images", ["listing_id"], :name => "index_listing_images_on_listing_id"
@@ -822,7 +819,6 @@ ActiveRecord::Schema.define(:version => 20150103143459) do
     t.datetime "updated_at",          :null => false
   end
 
-  #add_index "transaction_type_translations", ["transaction_type_id", "locale"], :name => "locale_index"
   add_index "transaction_type_translations", ["transaction_type_id"], :name => "index_transaction_type_translations_on_transaction_type_id"
 
   create_table "transaction_types", :force => true do |t|

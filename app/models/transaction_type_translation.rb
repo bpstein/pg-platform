@@ -13,7 +13,6 @@
 # Indexes
 #
 #  index_transaction_type_translations_on_transaction_type_id  (transaction_type_id)
-#  locale_index                                                (transaction_type_id,locale)
 #
 
 class TransactionTypeTranslation < ActiveRecord::Base

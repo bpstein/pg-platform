@@ -15,6 +15,7 @@
 #  width              :integer
 #  height             :integer
 #  author_id          :string(255)
+#  s3_path            :string(255)
 #
 # Indexes
 #
@@ -33,7 +34,12 @@ class ListingImage < ActiveRecord::Base
         :thumb => "120x120#",
         :original => "#{APP_CONFIG.original_image_width}x#{APP_CONFIG.original_image_height}>",
         :big => Proc.new { |instance| instance.crop_big },
-        :email => "150x100#"}
+        :email => "150x100#"},
+        :storage => :s3,
+         :s3_credentials => "#{Rails.root}/config/config.defaults.yml",
+        :bucket => 'pg_listings',
+         :path => ":rails_root/public/system/listing_images/:id/:basename_:style.:extension",
+                    :url => "/system/:listing_images/:id/:basename_:style.:extension"           
 
   before_save :set_dimensions!
 
@@ -50,7 +56,6 @@ class ListingImage < ActiveRecord::Base
     return unless self.respond_to?(:width) && self.respond_to?(:height)
 
     geometry = extract_dimensions
-
     if geometry
       self.width = geometry.width.to_i
       self.height = geometry.height.to_i
@@ -76,7 +81,8 @@ class ListingImage < ActiveRecord::Base
       tempfile.path
     else
       if image.options[:storage] === :s3
-        image.url
+        #image.url
+        self.s3_path
       else
         image.path
       end
@@ -119,7 +125,8 @@ class ListingImage < ActiveRecord::Base
   end
 
   def image_ready?
-    image_downloaded && !image_processing
+    #image_downloaded && !image_processing
+    true
   end
 
   def self.crop_need(x, desired_x)
