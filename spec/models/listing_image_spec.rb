@@ -15,6 +15,7 @@
 #  width              :integer
 #  height             :integer
 #  author_id          :string(255)
+#  s3_path            :string(255)
 #
 # Indexes
 #

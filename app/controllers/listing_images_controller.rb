@@ -25,8 +25,7 @@ class ListingImagesController < ApplicationController
     if !url.present?
       render json: {:errors => "No image URL provided"}, status: 400, content_type: 'text/plain'
     end
-    
-    add_image(params[:listing_id], {}, url,params[:filename])
+    add_image(params[:listing_id], {}, url,params[:path])
   end
 
   # Add new listing image to existing listing
@@ -55,14 +54,15 @@ class ListingImagesController < ApplicationController
     path.sub("${filename}", escaped_filename)
   end
 
-  def add_image(listing_id, params, url,file)
+  def add_image(listing_id, params, url,path)
     # if listing_id
     #   ListingImage.destroy_all(listing_id: listing_id)
     # end
     
     listing_image_params = params.merge(
       author: @current_user,
-      listing_id: listing_id
+      listing_id: listing_id,
+      s3_path: path
     )
     
     new_image(listing_image_params, url)
@@ -77,7 +77,8 @@ class ListingImagesController < ApplicationController
     if listing_image.save
       
       unless listing_image.image_downloaded
-        listing_image.delay.download_from_url(url)
+        #listing_image.delay.download_from_url(url)
+        true
       end
       render json: ListingImageJSAdapter.new(listing_image).to_json, status: 202, content_type: 'text/plain' # Browsers without XHR fileupload support do not support other dataTypes than text
     else

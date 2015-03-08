@@ -76,7 +76,8 @@ module ListingsHelper
     if self.has_images?(listing) then
       images = listing.listing_images
       if !listing.listing_images.all? { |image| image.image_ready? } then
-        block.call(:images_processing, nil)
+        #block.call(:images_processing, nil)
+        block.call(:images_ok,images)
       else
         block.call(:images_ok, images)
       end
