@@ -117,10 +117,10 @@ default: &default_settings
   # postmark_api_key:
 
   # This will be the from field in the mails sent from Sharetribe
-  sharetribe_mail_from_address: "your-team@example.com"
+  sharetribe_mail_from_address: "hello@peergear.io"
 
   # The address where the notifications of feedbacks from Sharetribe UI are sent
-  feedback_mailer_recipients:  'admins@example.com'
+  feedback_mailer_recipients:  'contact@peergear.io'
 
   # Google Analytics can be used to track traffic on the site
   # If set to true you need to obtain your own API key for analytics
@@ -211,15 +211,15 @@ default: &default_settings
   # width/height for "original" sized image, i.e. the largest image we store.
   # Please note, this does NOT mean that user can not upload images larger than
   # 1600x1600.
-  original_image_width: 1600
-  original_image_height: 1600
+  original_image_width: 1400
+  original_image_height: 1400
 
   # Email addresses for sales & support. Will be shown to the administrator.
-  sales_email: hello@example.com
-  support_email: support@example.com
+  sales_email: hello@peergear.io
+  support_email: admin@peergear.io
 
   # Knowledge base URL
-  knowledge_base_url: http://www.example.com/knowledgebase
+  knowledge_base_url: http://www.peergear.io
 
 production: &production_settings
   <<: *default_settings
