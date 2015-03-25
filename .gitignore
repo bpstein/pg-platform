@@ -4,6 +4,7 @@ db/sphinx
 config/*.sphinx.conf
 config/database.yml
 config/config.yml
+config/config.defaults.yml
 config/session_secret
 config/gmaps_api_key.yml
 config/translation.yml
