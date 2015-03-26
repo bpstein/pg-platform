@@ -56,7 +56,7 @@ default: &default_settings
   paypal_username: hello_api1.peergear.io
   paypal_password: Q5CCEWUNT8J5NSYW
   paypal_signature: An5ns1Kso7MWUdW4ErQKJJJ4qi4-A4-YCm.87Smr7uPDbb3Nf.l3wxLP
-  paypal_app_id: APP-80W284485P519543T # Global test id
+  paypal_app_id: P6FUKXT4EZEHQ # Global test id
   paypal_button_source: # Unique value given to you by your PayPal contact
 
   # Paypal environment to use. Either :sandbox or :live
