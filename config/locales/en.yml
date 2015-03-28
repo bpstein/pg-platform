@@ -1010,13 +1010,12 @@ en:
       all_categories: "All categories"
   infos:
     about:
-      default_about_text_title: 
-      default_about_text: PeerGear is a sharing platform to facilitate the short term rental of outdoors equipment all over the world. If you own gear and don’t use it all the time sharing is a great way to make easy money by lending out the gear you already have. We believe that too much quality gear is sitting idle in closets and garages when it should be outside being enjoyed. For your peace of mind all transactions are protected by a security deposit. If you want to rent gear to use at your holiday destination then PeerGear provides you access to local gear at attractive prices without the hassle and cost of carrying sports equipment with you.
-
+      default_about_text_title: "About %{marketplace_name}"
+      default_about_text: "%{marketplace_name} is an online platform that facilitates the short-term rental of sporting and outdoors equipment. <br />We believe that too much quality gear is sitting alone, unattended and unloved in closets and garages across the world. Instead, it should be outside being enjoyed.<br />If you own gear that sits idly in storage, consider lending it to people like you, and make some cash in return. If you're considering taking up a new sport or hobby, but aren't sure if you should buy the expensive gear, consider borrowing it for a fraction of the cost to buy!"
       click_here_link_text: "Click here"
     how_to_use:
-      default_title: "How it works"
-      default_content: "Here you can find information about how %{marketplace_name} works."
+      default_title: "How %{marketplace_name} works"
+      default_content: "%{marketplace_name} is an online platform that facilitates the short-term rental of sporting and outdoors equipment. <br />We believe that too much quality gear is sitting alone, unattended and unloved in closets and garages across the world. Instead, it should be outside being enjoyed.<br />If you own gear that sits idly in storage, consider lending it to people like you, and make some cash in return. If you're considering taking up a new sport or hobby, but aren't sure if you should buy the expensive gear, consider borrowing it for a fraction of the cost to buy!"
   layouts:
     admin:
       admin: "%{service_name} admin panel"
