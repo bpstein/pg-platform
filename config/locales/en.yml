@@ -341,7 +341,7 @@ en:
   common:
     edit_page: "Edit page"
     default_community_slogan: "Find gear. Earn cash. Start your adventure."
-    default_community_description: "Rent sporting gear and outdoors equipment with other sports enthusiasts just like you."
+    default_community_description: "<b>The world's rental store for outdoors and sporting equipment.</b>"
     cancel: Cancel
     fields_that_are_mandatory: "Fields marked with star (*) are mandatory."
     or: or
@@ -1010,12 +1010,12 @@ en:
       all_categories: "All categories"
   infos:
     about:
-      default_about_text_title: "About %{marketplace_name}"
-      default_about_text: "%{marketplace_name} is an online platform that facilitates the short-term rental of sporting and outdoors equipment. <br />We believe that too much quality gear is sitting alone, unattended and unloved in closets and garages across the world. Instead, it should be outside being enjoyed.<br />If you own gear that sits idly in storage, consider lending it to people like you, and make some cash in return. If you're considering taking up a new sport or hobby, but aren't sure if you should buy the expensive gear, consider borrowing it for a fraction of the cost to buy!"
+      default_about_text_title: "About PeerGear"
+      default_about_text: "PeerGear is an online platform that facilitates the short-term rental of sporting and outdoors equipment. We believe that too much quality gear is sitting alone, unattended and unloved in closets and garages across the world. Instead, it should be outside being enjoyed.<br /><br />If you own gear that sits idly in storage, consider lending it to people like you, and make some cash in return. If you're considering taking up a new sport or hobby, but aren't sure if you should buy the expensive gear, consider borrowing it for a fraction of the cost to buy!"
       click_here_link_text: "Click here"
     how_to_use:
-      default_title: "How %{marketplace_name} works"
-      default_content: "%{marketplace_name} is an online platform that facilitates the short-term rental of sporting and outdoors equipment. <br />We believe that too much quality gear is sitting alone, unattended and unloved in closets and garages across the world. Instead, it should be outside being enjoyed.<br />If you own gear that sits idly in storage, consider lending it to people like you, and make some cash in return. If you're considering taking up a new sport or hobby, but aren't sure if you should buy the expensive gear, consider borrowing it for a fraction of the cost to buy!"
+      default_title: "How it works"
+      # default_content: "PeerGear is an online platform that facilitates the short-term rental of sporting and outdoors equipment. <br />We believe that too much quality gear is sitting alone, unattended and unloved in closets and garages across the world. Instead, it should be outside being enjoyed.<br />If you own gear that sits idly in storage, consider lending it to people like you, and make some cash in return. If you're considering taking up a new sport or hobby, but aren't sure if you should buy the expensive gear, consider borrowing it for a fraction of the cost to buy!"
   layouts:
     admin:
       admin: "%{service_name} admin panel"
