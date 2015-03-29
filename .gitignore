@@ -29,7 +29,6 @@ public/system/wide_logos/
 .loadpath
 .project
 cg.sh
-public/assets/
 app/assets/webfonts/
 app/assets/stylesheets/customizations-*
 app/assets/stylesheets/custom-style-*

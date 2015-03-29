@@ -781,7 +781,7 @@ en:
       click_here_to_reply: "Click here to respond to the request"
     welcome_email:
       welcome_email_subject: "Welcome to %{service_name}!"
-      welcome_to_marketplace: "Welcome to %{service_name}! Glad to have you on board!<br /><br />Have gear sitting lonely and alone in storage? Lend it to people and start making some cash!</br ></br >Interested in getting outdoors but don't want to buy expensive equipment right now? Borrow gear from someone just like you!"
+      welcome_to_marketplace: "Welcome to %{service_name}! Glad to have you on board!<br/><br/>Have gear sitting lonely and alone in storage? Lend it to people and start making some cash!</br></br>Interested in getting outdoors but don't want to buy expensive equipment right now? Borrow gear from someone just like you!"
       love_marketplace_crew: "Love,<br /><i>Team %{service_name} </i>"
       p_s_did_you_know: ""
       click_here_link_text: "Click here"
