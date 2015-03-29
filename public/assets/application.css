@@ -3136,12 +3136,12 @@ figure.fluidratio {
 }
 .marketplace-lander figure.marketplace-cover {
     background-image: url("/assets/cover_photos/header/default.jpg");
-    height: 42.8125em;
+    height: 32.8125em;
 }
 @media (min-width: 48em) {
     .marketplace-lander figure.marketplace-cover {
     padding-top: 0%;
-    height: 28.3125em;
+    height: 39.0125em;
     background-size: cover;
     -moz-background-size: cover;
     background-position: center;
@@ -3354,7 +3354,7 @@ figure.fluidratio {
 }
 }@media (min-width: 48em) {
     .marketplace-lander .marketplace-lander-content {
-    top: -22.875em;
+    top: -32.875em;
 }
 .marketplace-lander .marketplace-lander-content-title {
     margin-bottom: 0;
@@ -4804,7 +4804,7 @@ h1 {
     -ms-border-radius: 0.3125em;
     -o-border-radius: 0.3125em;
     border-radius: 0.3125em;
-    background: #00a26c;
+    background: #DC3238;
     color: #fff;
     text-align: center;
     cursor: pointer;
@@ -4829,7 +4829,7 @@ h1 {
     text-align: center;
 }
 .new-listing-link:hover {
-    background: #00895b;
+    background: #EA898C;
     color: #fff;
 }
 .new-listing-link:active {
@@ -4991,7 +4991,7 @@ h1 {
 .header-wide-logo {
     background-image: url("/assets/logos/full/default.png");
     width: 10.5em;
-    height: 2.5em;
+    height: 2.65em;
     background-repeat: no-repeat;
     -webkit-background-size: 10.5em auto;
     -moz-background-size: 10.5em auto;
