@@ -341,7 +341,7 @@ en:
   common:
     edit_page: "Edit page"
     default_community_slogan: "Find gear. Earn cash. Start your adventure."
-    default_community_description: "Rent sporting gear and outdoors equipment with other sports enthusiasts just like you."
+    default_community_description: "<b>The world's rental store for outdoors and sporting equipment.</b>"
     cancel: Cancel
     fields_that_are_mandatory: "Fields marked with star (*) are mandatory."
     or: or
@@ -780,10 +780,10 @@ en:
       one_day_left: "If you don't accept the request within one day the request will be automatically rejected and you will not get paid."
       click_here_to_reply: "Click here to respond to the request"
     welcome_email:
-      welcome_email_subject: "Welcome to %{service_name}"
-      welcome_to_marketplace: "Welcome to %{service_name}! Glad to have you on board."
-      love_marketplace_crew: "Love,<br /><i>%{service_name} crew</i>"
-      p_s_did_you_know: "P.S. Would you like to create your own marketplace website just like %{service_name}? It's easy and requires no programming knowledge. %{click_here_link} to find out more!"
+      welcome_email_subject: "Welcome to %{service_name}!"
+      welcome_to_marketplace: "Welcome to %{service_name}! Glad to have you on board!<br/><br/>Have gear sitting lonely and alone in storage? Lend it to people and start making some cash!</br></br>Interested in getting outdoors but don't want to buy expensive equipment right now? Borrow gear from someone just like you!"
+      love_marketplace_crew: "Love,<br /><i>Team %{service_name} </i>"
+      p_s_did_you_know: ""
       click_here_link_text: "Click here"
       welcome_email_footer_text: "What kind of emails do you want to receive from %{service_name}? %{settings_link}"
       settings_link_text: "Check your settings"
@@ -1010,13 +1010,12 @@ en:
       all_categories: "All categories"
   infos:
     about:
-      default_about_text_title: 
-      default_about_text: PeerGear is a sharing platform to facilitate the short term rental of outdoors equipment all over the world. If you own gear and don’t use it all the time sharing is a great way to make easy money by lending out the gear you already have. We believe that too much quality gear is sitting idle in closets and garages when it should be outside being enjoyed. For your peace of mind all transactions are protected by a security deposit. If you want to rent gear to use at your holiday destination then PeerGear provides you access to local gear at attractive prices without the hassle and cost of carrying sports equipment with you.
-
+      default_about_text_title: "About PeerGear"
+      default_about_text: "PeerGear is an online platform that facilitates the short-term rental of sporting and outdoors equipment. We believe that too much quality gear is sitting alone, unattended and unloved in closets and garages across the world. Instead, it should be outside being enjoyed.<br /><br />If you own gear that sits idly in storage, consider lending it to people like you, and make some cash in return. If you're considering taking up a new sport or hobby, but aren't sure if you should buy the expensive gear, consider borrowing it for a fraction of the cost to buy!"
       click_here_link_text: "Click here"
     how_to_use:
       default_title: "How it works"
-      default_content: "Here you can find information about how %{marketplace_name} works."
+      # default_content: "PeerGear is an online platform that facilitates the short-term rental of sporting and outdoors equipment. <br />We believe that too much quality gear is sitting alone, unattended and unloved in closets and garages across the world. Instead, it should be outside being enjoyed.<br />If you own gear that sits idly in storage, consider lending it to people like you, and make some cash in return. If you're considering taking up a new sport or hobby, but aren't sure if you should buy the expensive gear, consider borrowing it for a fraction of the cost to buy!"
   layouts:
     admin:
       admin: "%{service_name} admin panel"

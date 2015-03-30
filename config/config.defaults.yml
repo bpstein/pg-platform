@@ -178,7 +178,7 @@ default: &default_settings
   # Global Service name
   # If you want to call this service with different name on this server, you can specify it here
   # This can also be set community specific in community.settings["service_name"]
-  global_service_name: Sharetribe
+  global_service_name: PeerGear
 
   # Icon set
   # By default Sharetribe uses the Font Awesome Icon Pack
@@ -217,8 +217,8 @@ default: &default_settings
   # width/height for "original" sized image, i.e. the largest image we store.
   # Please note, this does NOT mean that user can not upload images larger than
   # 1600x1600.
-  original_image_width: 1400
-  original_image_height: 1400
+  original_image_width: 1600
+  original_image_height: 1600
 
   # Email addresses for sales & support. Will be shown to the administrator.
   sales_email: hello@peergear.io
@@ -232,7 +232,7 @@ production: &production_settings
 
   # Set this to true if you want the rails server to serve static assets in production mode (images, JS etc.)
   # normally it is better to leave this for the web server (apache) to do.
-  serve_static_assets_in_production: true
+  serve_static_assets_in_production: false
 
 staging:
   <<: *production_settings
