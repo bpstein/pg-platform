@@ -243,8 +243,8 @@ markerclusterer.js: markerclusterer-5180c8d802cad760f4455e9e40839325.js
 markerclusterer/index.js: markerclusterer-5180c8d802cad760f4455e9e40839325.js
 mercury.js: mercury-f06c7fb9982a096cceb988c66236dd0d.js
 mercury/index.js: mercury-f06c7fb9982a096cceb988c66236dd0d.js
-application.css: application-2d94121c9487c055c41876e858066086.css
-application/index.css: application-2d94121c9487c055c41876e858066086.css
+application.css: application.css
+application/index.css: application.css
 mercury.css: mercury-d23e098d9cb972598c043a29f00db3a6.css
 mercury/index.css: mercury-d23e098d9cb972598c043a29f00db3a6.css
 ss-pika.css: ss-pika-4f41c05ec8287c261b27e4c60f034df2.css

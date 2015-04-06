@@ -20,7 +20,6 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
-    CFPropertyList (2.3.0)
     action_mailer_cache_delivery (0.3.7)
       actionmailer (>= 3.0)
     actionmailer (3.2.19)
@@ -58,10 +57,6 @@ GEM
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     arel (3.0.3)
-    asset_sync (1.1.0)
-      activemodel
-      fog (>= 1.8.0)
-      unf
     ast (2.0.0)
     astrolabe (1.3.0)
       parser (>= 2.2.0.pre.3, < 3.0)
@@ -165,7 +160,6 @@ GEM
       mail (~> 2.2)
     erubis (2.7.0)
     eventmachine (1.0.4)
-    excon (0.43.0)
     execjs (2.2.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -177,89 +171,12 @@ GEM
     fb-channel-file (0.0.2)
       rails (>= 3.0)
     ffi (1.9.6)
-    fission (0.5.0)
-      CFPropertyList (~> 2.2)
     flying-sphinx (1.2.0)
       faraday (>= 0.9)
       multi_json (>= 1.3.0)
       pusher-client (~> 0.3)
       riddle (>= 1.5.6)
       thinking-sphinx
-    fog (1.27.0)
-      fog-atmos
-      fog-aws (~> 0.0)
-      fog-brightbox (~> 0.4)
-      fog-core (~> 1.27, >= 1.27.3)
-      fog-ecloud
-      fog-json
-      fog-profitbricks
-      fog-radosgw (>= 0.0.2)
-      fog-sakuracloud (>= 0.0.4)
-      fog-serverlove
-      fog-softlayer
-      fog-storm_on_demand
-      fog-terremark
-      fog-vmfusion
-      fog-voxel
-      fog-xml (~> 0.1.1)
-      ipaddress (~> 0.5)
-      nokogiri (~> 1.5, >= 1.5.11)
-    fog-atmos (0.1.0)
-      fog-core
-      fog-xml
-    fog-aws (0.0.6)
-      fog-core (~> 1.27)
-      fog-json (~> 1.0)
-      fog-xml (~> 0.1)
-      ipaddress (~> 0.8)
-    fog-brightbox (0.7.1)
-      fog-core (~> 1.22)
-      fog-json
-      inflecto (~> 0.0.2)
-    fog-core (1.27.3)
-      builder
-      excon (~> 0.38)
-      formatador (~> 0.2)
-      mime-types
-      net-scp (~> 1.1)
-      net-ssh (>= 2.1.3)
-    fog-ecloud (0.0.2)
-      fog-core
-      fog-xml
-    fog-json (1.0.0)
-      multi_json (~> 1.0)
-    fog-profitbricks (0.0.1)
-      fog-core
-      fog-xml
-      nokogiri
-    fog-radosgw (0.0.3)
-      fog-core (>= 1.21.0)
-      fog-json
-      fog-xml (>= 0.0.1)
-    fog-sakuracloud (0.1.1)
-      fog-core
-      fog-json
-    fog-serverlove (0.1.1)
-      fog-core
-      fog-json
-    fog-softlayer (0.3.28)
-      fog-core (>= 1.27.3)
-      fog-json
-    fog-storm_on_demand (0.1.0)
-      fog-core
-      fog-json
-    fog-terremark (0.0.3)
-      fog-core
-      fog-xml
-    fog-vmfusion (0.0.1)
-      fission
-      fog-core
-    fog-voxel (0.0.2)
-      fog-core
-      fog-xml
-    fog-xml (0.1.1)
-      fog-core
-      nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
     fssm (0.2.10)
     gherkin (2.12.2)
@@ -299,9 +216,7 @@ GEM
       slop (>= 3.5.0)
       term-ansicolor
       terminal-table
-    inflecto (0.0.2)
     innertube (1.1.0)
-    ipaddress (0.8.0)
     joiner (0.2.0)
       activerecord (>= 3.1.0, < 4.1.0)
     journey (1.0.4)
@@ -346,9 +261,6 @@ GEM
     multipart-post (2.0.0)
     mysql2 (0.3.18)
     nenv (0.1.1)
-    net-scp (1.2.1)
-      net-ssh (>= 2.6.5)
-    net-ssh (2.9.2)
     netrc (0.10.2)
     newrelic_rpm (3.9.1.236)
     nokogiri (1.6.5)
@@ -591,9 +503,6 @@ GEM
     uglifier (2.7.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.6)
     unicorn (4.6.3)
       kgio (~> 2.6)
       rack
@@ -621,7 +530,6 @@ DEPENDENCIES
   action_mailer_cache_delivery
   airbrake (~> 4.1.0)
   annotate
-  asset_sync
   aws-sdk
   braintree
   capybara
