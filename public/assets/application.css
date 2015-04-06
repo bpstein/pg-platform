@@ -1583,7 +1583,7 @@ button, .button {
     -ms-border-radius: 0.3125em;
     -o-border-radius: 0.3125em;
     border-radius: 0.3125em;
-    background: #a64c5d;
+    background: #dc3238;
     color: #fff;
     text-align: center;
     cursor: pointer;
@@ -1681,7 +1681,7 @@ button:active, .button:active {
     -ms-border-radius: 0.3125em;
     -o-border-radius: 0.3125em;
     border-radius: 0.3125em;
-    background: #a64c5d;
+    background: #dc3238;
     color: #fff;
     text-align: center;
     cursor: pointer;
@@ -1775,7 +1775,7 @@ label.error:before {
     color: #fff;
 }
 .tribe-actions {
-    background: #a64c5d;
+    background: #dc3238;
 }
 .tribe-actions .hidden {
     display: none;
@@ -2079,7 +2079,7 @@ a.lightbox-x:hover {
     display: block;
     float: left;
     padding: 0.625em 0.9375em 0.625em 0.9375em;
-    color: #a64c5d;
+    color: #dc3238;
 }
 .feed-actions .request-link:hover {
     color: #723440;
@@ -2091,7 +2091,7 @@ a.lightbox-x:hover {
     -ms-border-radius: 0.3125em;
     -o-border-radius: 0.3125em;
     border-radius: 0.3125em;
-    background: #a64c5d;
+    background: #dc3238;
     color: #fff;
     text-align: center;
     cursor: pointer;
@@ -2177,7 +2177,7 @@ a.lightbox-x:hover {
     margin-right: 0.75em;
 }
 .feed-map-link a.map-link:hover {
-    color: #a64c5d;
+    color: #dc3238;
 }
 }@media (min-width: 63em) {
     .feed-map-link .hidden-text {
@@ -2236,7 +2236,7 @@ a.lightbox-x:hover {
     -ms-border-radius: 0.3125em;
     -o-border-radius: 0.3125em;
     border-radius: 0.3125em;
-    background: #a64c5d;
+    background: #dc3238;
     color: #fff;
     text-align: center;
     cursor: pointer;
@@ -2277,7 +2277,7 @@ a.lightbox-x:hover {
     color: #3c3c3c;
 }
 .view-item .listing-icons a:hover {
-    color: #a64c5d;
+    color: #ea898c;
 }
 .view-item .listing-departure-time {
     padding: 0.375em 0 0.75em 0;
@@ -2521,7 +2521,7 @@ a.lightbox-x:hover {
     -ms-border-radius: 0.3125em;
     -o-border-radius: 0.3125em;
     border-radius: 0.3125em;
-    background: #a64c5d;
+    background: #dc3238;
     color: #fff;
     text-align: center;
     cursor: pointer;
@@ -2548,7 +2548,7 @@ a.lightbox-x:hover {
     text-align: center;
 }
 .view-profile .button:hover {
-    background: #954453;
+    background: #ea898c;
     color: #fff;
 }
 .view-profile .button:active {
@@ -2665,7 +2665,7 @@ a.lightbox-x:hover {
     display: block;
     top: 22.5em;
     color: #fff;
-    background: #a64c5d;
+    background: #dc3238;
     -moz-border-radius-bottomleft: 0.3125em;
     -webkit-border-bottom-left-radius: 0.3125em;
     border-bottom-left-radius: 0.3125em;
@@ -2675,7 +2675,7 @@ a.lightbox-x:hover {
 }
 .view-profile .add-profile-picture-link:hover {
     color: #fff;
-    background: #833c49;
+    background: #ea898c;
 }
 }.login-form .facebook-account-info {
     color: #3c3c3c;
@@ -2730,7 +2730,7 @@ a.lightbox-x:hover {
     margin-bottom: 0.375em;
 }
 .new-listing-form a.select:hover, .edit-listing-form a.select:hover {
-    background: #e8e8e8;
+    background: #ea898c;
 }
 .new-listing-form a.select .link-text, .edit-listing-form a.select .link-text {
     margin-left: 0.9375em;
@@ -2783,7 +2783,7 @@ a.lightbox-x:hover {
     -ms-border-radius: 0.3125em;
     -o-border-radius: 0.3125em;
     border-radius: 0.3125em;
-    background: #a64c5d;
+    background: #dc3238;
     color: #fff;
     text-align: center;
     cursor: pointer;
@@ -2802,7 +2802,7 @@ a.lightbox-x:hover {
     text-align: center;
 }
 .conversation-status .status-link:hover {
-    background: #954453;
+    background: #ea898c;
     color: #fff;
 }
 .conversation-status .status-link:active {
@@ -2816,7 +2816,7 @@ a.lightbox-x:hover {
 }
 .conversation-status .accept:hover, .conversation-status .confirm:hover, .conversation-status .accept_preauthorized:hover {
     color: #79a91a;
-    background: #d5f09f;
+    background: #ea898c;
     border-color: #79a91a;
 }
 .conversation-status .reject, .conversation-status .cancel, .conversation-status .reject_preauthorized {
@@ -3284,7 +3284,7 @@ figure.fluidratio {
     font-size: 1em;
     line-height: 1.5em;
     color: #fff;
-    background: #a64c5d;
+    background: #dc3238;
     text-align: center;
     cursor: pointer;
     width: 100%;
@@ -3293,7 +3293,7 @@ figure.fluidratio {
     border: 0;
 }
 .marketplace-lander button.action-button:hover {
-    background: #954453;
+    background: #ea898c;
     color: #fff;
 }
 @media (min-width: 48em) {
@@ -3525,7 +3525,7 @@ figure.fluidratio {
     float: right;
 }
 .datepicker table tr td.active:hover, .datepicker table tr td.active:hover:hover, .datepicker table tr td.active.disabled:hover, .datepicker table tr td.active.disabled:hover:hover, .datepicker table tr td.active:focus, .datepicker table tr td.active:hover:focus, .datepicker table tr td.active.disabled:focus, .datepicker table tr td.active.disabled:hover:focus, .datepicker table tr td.active:active, .datepicker table tr td.active:hover:active, .datepicker table tr td.active.disabled:active, .datepicker table tr td.active.disabled:hover:active, .datepicker table tr td.active.active, .datepicker table tr td.active:hover.active, .datepicker table tr td.active.disabled.active, .datepicker table tr td.active.disabled:hover.active, .open .dropdown-toggle.datepicker table tr td.active, .open .dropdown-toggle.datepicker table tr td.active:hover, .open .dropdown-toggle.datepicker table tr td.active.disabled, .open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
-    background-color: #a64c5d;
+    background-color: #dc3238;
 }
 .input-daterange {
     margin-bottom: 1.125em;
@@ -3897,7 +3897,7 @@ figure.fluidratio {
 }
 .send-button-wrapper .send-button-loading {
     float: left;
-    background-color: #c3c3c3;
+    background-color: #ea898c;
 }
 .send-button-wrapper .send-button-loading-img {
     float: left;
@@ -3930,7 +3930,7 @@ figure.fluidratio {
     box-shadow: none;
 }
 .noUi-connect {
-    background: #a64c5d;
+    background: #dc3238;
 }
 .noUi-horizontal {
     height: 12px;
@@ -4165,7 +4165,7 @@ span.bubble-title-link {
     margin-top: 0.375em;
     font-style: normal;
     font-weight: bold;
-    background: #a64c5d;
+    background: #dc3238;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
@@ -4187,7 +4187,7 @@ span.bubble-title-link {
     border-radius: 5px;
     margin-right: 0.375em;
     text-decoration: none;
-    color: #a64c5d;
+    color: #dc3238;
 }
 .pagination a:hover, .pagination a:focus {
     background: #c3c3c3;
@@ -4283,13 +4283,13 @@ tbody tr:nth-child(odd) {
 }
 a {
     text-decoration: none;
-    color: #a64c5d;
+    color: #dc3238;
 }
 a:hover {
-    color: #723440;
+    color: #ea898c;
 }
 a:active {
-    color: #4f242c;
+    color: #dc3238;
 }
 .truncated-link {
     display: inline-block;
@@ -4362,7 +4362,7 @@ h1 {
 .toggle-menu a.login-form:after, .toggle-menu .toggle-menu-item.login-form:after, .toggle-menu .login-form.toggle-menu-title:after {
     content: ""}
 .toggle-menu a:hover, .toggle-menu .toggle-menu-link:hover {
-    background: #a64c5d;
+    background: #dc3238;
     color: #fff;
 }
 .toggle-menu a:hover:after, .toggle-menu .toggle-menu-link:hover:after {
@@ -4935,7 +4935,7 @@ h1 {
     position: absolute;
     top: 1.875em;
     left: 1.4375em;
-    background: #a64c5d;
+    background: #dc3238;
     color: #fff;
     width: 20px;
     height: 20px;
@@ -5176,7 +5176,7 @@ h1 {
     -ms-border-radius: 0.3125em;
     -o-border-radius: 0.3125em;
     border-radius: 0.3125em;
-    background: #a64c5d;
+    background: #dc3238;
     color: #fff;
     text-align: center;
     cursor: pointer;
@@ -5224,7 +5224,7 @@ h1 {
     border-color: #666;
 }
 .home-toolbar-button-group-button.selected {
-    background-color: #a64c5d;
+    background-color: #dc3238;
     color: #fff;
     border-color: #833c49;
 }
@@ -5287,7 +5287,7 @@ h1 {
     -ms-border-radius: 0.3125em;
     -o-border-radius: 0.3125em;
     border-radius: 0.3125em;
-    background: #a64c5d;
+    background: #dc3238;
     color: #fff;
     text-align: center;
     cursor: pointer;
@@ -5328,7 +5328,7 @@ h1 {
     border-color: #666;
 }
 .home-toolbar-show-filters-button.selected {
-    background-color: #a64c5d;
+    background-color: #dc3238;
     color: #fff;
     border-color: #833c49;
 }
@@ -6013,7 +6013,7 @@ h1 {
     -ms-border-radius: 0.3125em;
     -o-border-radius: 0.3125em;
     border-radius: 0.3125em;
-    background: #a64c5d;
+    background: #31Dcd5;
     color: #fff;
     text-align: center;
     cursor: pointer;
@@ -6055,7 +6055,7 @@ h1 {
 .checkbox-option-checkmark {
     display: inline-block;
     width: 20px;
-    color: #a64c5d;
+    color: #dc3238;
 }
 @media (min-width: 30em) {
     .message-avatar-padding {
@@ -6199,7 +6199,7 @@ h1 {
     -ms-border-radius: 0.3125em;
     -o-border-radius: 0.3125em;
     border-radius: 0.3125em;
-    background: #a64c5d;
+    background: #dc3238;
     color: #fff;
     text-align: center;
     cursor: pointer;
