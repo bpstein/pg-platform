@@ -204,7 +204,7 @@ class PaypalAccountsController < ApplicationController
           response[:username_to],
           response[:token]
         )
-      response[:redirect_url]
+      response[:redirect_url] = "https://pg-platform.herokuapp.com/"
     else
       nil
     end
