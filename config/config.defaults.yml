@@ -53,20 +53,20 @@ default: &default_settings
   braintree_expiration_period: 5
 
   # Paypal credentials for the platform owner live.
-  # paypal_username: hello_api1.peergear.io
-  # paypal_password: Q5CCEWUNT8J5NSYW
-  # paypal_signature: An5ns1Kso7MWUdW4ErQKJJJ4qi4-A4-YCm.87Smr7uPDbb3Nf.l3wxLP
-  # paypal_app_id: P6FUKXT4EZEHQ # Global test id
+  paypal_username: hello_api1.peergear.io
+  paypal_password: Q5CCEWUNT8J5NSYW
+  paypal_signature: An5ns1Kso7MWUdW4ErQKJJJ4qi4-A4-YCm.87Smr7uPDbb3Nf.l3wxLP
+  paypal_app_id: APP-8BX07908U0136584B # Global test id
 
   # Paypal credentials for the platform owner sandbox.
-  paypal_username: hello-facilitator_api1.peergear.io
-  paypal_password: AM553VGAFBDJKA66
-  paypal_signature: An5ns1Kso7MWUdW4ErQKJJJ4qi4-ARyNXsoEX..Vs1JP9hwFSTH7U2Iv
-  paypal_app_id: APP-80W284485P519543T  # Global test id
+  # paypal_username: hello-facilitator_api1.peergear.io
+  # paypal_password: AM553VGAFBDJKA66
+  # paypal_signature: An5ns1Kso7MWUdW4ErQKJJJ4qi4-ARyNXsoEX..Vs1JP9hwFSTH7U2Iv
+  # paypal_app_id: APP-80W284485P519543T  # Global test id
   paypal_button_source: # Unique value given to you by your PayPal contact
 
   # Paypal environment to use. Either :sandbox or :live
-  paypal_endpoint: sandbox
+  paypal_endpoint: live
   # after authorization there is 3 day period before expiration
   paypal_expiration_period: 3
   # The domain that we want Paypal to send IPN notifications to
