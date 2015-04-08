@@ -3141,7 +3141,10 @@ figure.fluidratio {
 @media (min-width: 48em) {
     .marketplace-lander figure.marketplace-cover {
     padding-top: 0%;
-    height: 42.0125em;
+    min-height: 100%;
+    min-width: 1024px;
+    width: auto;
+    height: 41.8125em;
     background-size: cover;
     -moz-background-size: cover;
     background-position: center;
