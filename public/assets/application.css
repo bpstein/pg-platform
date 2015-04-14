@@ -3137,17 +3137,20 @@ figure.fluidratio {
 .marketplace-lander figure.marketplace-cover {
     background-image: url("/assets/cover_photos/header/default.jpg");
     height: 32.8125em;
+    background-size: cover;
 }
 @media (min-width: 48em) {
     .marketplace-lander figure.marketplace-cover {
     padding-top: 0%;
     min-height: 100%;
+    bottom:0px;
     min-width: 1024px;
     width: auto;
-    height: 41.8125em;
+    height: 44.8125em;
     background-size: cover;
     -moz-background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 }.marketplace-lander figure.marketplace-cover-small {
     background-image: url("/assets/cover_photos/header/default.jpg");
