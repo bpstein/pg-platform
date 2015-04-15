@@ -10,16 +10,16 @@ module PaypalService
 
       PayPal::SDK.configure(
         {
-          # mode: endpoint[:endpoint_name].to_s,
-          # username: api_credentials[:username],
-          # password: api_credentials[:password],
-          # signature: api_credentials[:signature],
-          # app_id: api_credentials[:app_id]
-          mode: "sandbox",
-          username: "hello-facilitator_api1.peergear.io",
-          password: "AM553VGAFBDJKA66",
-          signature: "An5ns1Kso7MWUdW4ErQKJJJ4qi4-ARyNXsoEX..Vs1JP9hwFSTH7U2Iv",
-          app_id: "APP-80W284485P519543T"
+          mode: "live",
+          username:"hello_api1.peergear.io",
+          password: "Q5CCEWUNT8J5NSYW",
+          signature: "An5ns1Kso7MWUdW4ErQKJJJ4qi4-A4-YCm.87Smr7uPDbb3Nf.l3wxLP",
+          app_id: "APP-8BX07908U0136584B"
+          # mode: "sandbox",
+          # username: "hello-facilitator_api1.peergear.io",
+          # password: "AM553VGAFBDJKA66",
+          # signature: "An5ns1Kso7MWUdW4ErQKJJJ4qi4-ARyNXsoEX..Vs1JP9hwFSTH7U2Iv",
+          # app_id: "APP-80W284485P519543T"
         }
       )
 

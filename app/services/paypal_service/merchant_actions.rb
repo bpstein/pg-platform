@@ -67,7 +67,7 @@ module PaypalService
           DataTypes::Merchant.create_setup_billing_agreement_response({
             token: res.token,
             redirect_url: express_checkout_url(api, res.token),
-            username_to: api.config.subject || api.config.username
+            username_to: api.config.username#api.config.subject || 
           })
         }
       ),
