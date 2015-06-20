@@ -14,7 +14,7 @@ module PaypalService
           username:"hello_api1.peergear.io",
           password: "Q5CCEWUNT8J5NSYW",
           signature: "An5ns1Kso7MWUdW4ErQKJJJ4qi4-A4-YCm.87Smr7uPDbb3Nf.l3wxLP",
-          app_id: "APP-8BX07908U0136584B"
+          app_id: "APP-7NF76301VX6287036"
           # mode: "sandbox",
           # username: "hello-facilitator_api1.peergear.io",
           # password: "AM553VGAFBDJKA66",

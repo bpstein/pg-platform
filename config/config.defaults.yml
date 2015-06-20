@@ -56,7 +56,7 @@ default: &default_settings
   paypal_username: hello_api1.peergear.io
   paypal_password: Q5CCEWUNT8J5NSYW
   paypal_signature: An5ns1Kso7MWUdW4ErQKJJJ4qi4-A4-YCm.87Smr7uPDbb3Nf.l3wxLP
-  paypal_app_id: APP-8BX07908U0136584B # Global test id
+  paypal_app_id: APP-7NF76301VX6287036 # Global test id
 
   # Paypal credentials for the platform owner sandbox.
   # paypal_username: hello-facilitator_api1.peergear.io
