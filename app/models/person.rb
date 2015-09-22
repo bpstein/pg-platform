@@ -76,7 +76,7 @@ class Person < ActiveRecord::Base
 
   # Setup accessible attributes for your model (the rest are protected)
   attr_accessible :username, :password, :password2, :password_confirmation,
-                  :remember_me, :consent, :login
+                  :remember_me, :consent, :login, :is_admin
 
   attr_accessor :guid, :password2, :form_login,
                 :form_given_name, :form_family_name, :form_password,
@@ -86,8 +86,6 @@ class Person < ActiveRecord::Base
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
-
-  attr_protected :is_admin
 
   has_many :listings, :dependent => :destroy, :foreign_key => "author_id", :conditions => "deleted = false"
   has_many :emails, :dependent => :destroy, :inverse_of => :person
