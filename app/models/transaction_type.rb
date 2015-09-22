@@ -21,7 +21,7 @@
 #
 
 class TransactionType < ActiveRecord::Base
-  attr_accessible :community_id, :price_field, :sort_priority, :type, :price_quantity_placeholder, :price_per, :url
+  attr_accessible :community_id, :price_field, :sort_priority, :type, :price_quantity_placeholder, :price_per, :url, :preauthorize_payment
 
   belongs_to :community
 
