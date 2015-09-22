@@ -4,6 +4,10 @@
       .left-navi-link-icon{:class => link[:icon_class]}
       .left-navi-link-text= link[:text]
 
+  %a#settings-tab-payments.left-navi-link{:href => show_stripe_settings_payment_path, :title => "Payments", :class => (params[:controller].eql?("stripe_accounts") ? "selected left-navi-link" : "left-navi-link")}
+    .left-navi-link-icon.icon-circle-blank
+    .left-navi-link-text Payments
+
 - links.each do |link|
   - if link[:name].eql?(@selected_left_navi_link)
     .left-navi-dropdown.toggle.with-borders.hidden-tablet{data: {toggle: '.left-navi-menu'}}

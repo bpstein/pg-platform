@@ -13,29 +13,11 @@ class AcceptPreauthorizedConversationsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def accept
-    payment_type = MarketplaceService::Community::Query.payment_type(@current_community.id)
-
-    case payment_type
-    when :braintree
-      render_braintree_form("accept")
-    when :paypal
-      render_paypal_form("accept")
-    else
-      raise "Unknown payment type: #{payment_type}"
-    end
+    render_stripe_form("accept")
   end
 
   def reject
-    payment_type = MarketplaceService::Community::Query.payment_type(@current_community.id)
-
-    case payment_type
-    when :braintree
-      render_braintree_form("reject")
-    when :paypal
-      render_paypal_form("reject")
-    else
-      raise "Unknown payment type: #{payment_type}"
-    end
+    render_stripe_form("reject")
   end
 
   def accepted
@@ -81,6 +63,8 @@ class AcceptPreauthorizedConversationsController < ApplicationController
   end
 
   def with_updated_listing_status(listing_conversation, status, sender_id, &block)
+
+    p status
     response =
       if(status == "paid")
         TransactionService::Transaction.complete_preauthorization(listing_conversation.id)
@@ -134,12 +118,15 @@ class AcceptPreauthorizedConversationsController < ApplicationController
     }
   end
 
-  def render_braintree_form(preselected_action)
+  def render_stripe_form(preselected_action)
+    total_sum = @listing_conversation.listing.price * @listing_conversation.listing_quantity
+    fee = total_sum * 0.1
+
     render action: :accept, locals: {
       discussion_type: @listing_conversation.discussion_type,
-      sum: @listing_conversation.payment.total_sum,
-      fee: @listing_conversation.payment.total_commission,
-      seller_gets: @listing_conversation.payment.seller_gets,
+      sum: total_sum,
+      fee: total_sum * 0.1,
+      seller_gets: total_sum - fee,
       form: @listing_conversation,
       form_action: acceptance_preauthorized_person_message_path(
         person_id: @current_user.id,

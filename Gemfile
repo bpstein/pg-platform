@@ -85,6 +85,7 @@ gem 'redis'
 gem 'redis-rails'
 gem 'mysql2', '~> 0.3.13'
 gem 'pg'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 group :staging, :production do
   gem 'newrelic_rpm', '~> 3.9.1.236'

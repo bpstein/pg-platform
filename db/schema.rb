@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150302140740) do
+ActiveRecord::Schema.define(:version => 20150918222021) do
 
   create_table "auth_tokens", :force => true do |t|
     t.string   "token"
@@ -783,6 +783,19 @@ ActiveRecord::Schema.define(:version => 20150302140740) do
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
+  create_table "stripe_accounts", :force => true do |t|
+    t.string   "access_token"
+    t.string   "livemode"
+    t.string   "refresh_token"
+    t.string   "scope"
+    t.string   "stripe_publishable_key"
+    t.string   "stripe_user_id"
+    t.string   "token_type"
+    t.string   "person_id"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
   create_table "testimonials", :force => true do |t|
     t.float    "grade"
     t.text     "text"
@@ -855,6 +868,7 @@ ActiveRecord::Schema.define(:version => 20150302140740) do
     t.string   "payment_gateway",                                 :default => "none", :null => false
     t.integer  "listing_quantity",                                :default => 1
     t.string   "payment_process",                   :limit => 31, :default => "none"
+    t.text     "stripe_token"
   end
 
   add_index "transactions", ["community_id"], :name => "index_transactions_on_community_id"

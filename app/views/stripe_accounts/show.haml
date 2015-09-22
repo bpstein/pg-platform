@@ -1,0 +1,7 @@
+= render :partial => "layouts/left_hand_navigation", :locals => { :links => settings_links_for(@current_user, @current_community) }
+#person_settings_form.left-navi-section.settings-section
+  - if @current_user.stripe_account.nil?
+    %a.stripe-connect{:href => "https://connect.stripe.com/oauth/authorize?response_type=code&client_id=#{APP_CONFIG.stripe_client_id}&scope=read_write&redirect_uri=#{APP_CONFIG.stripe_account_callback_url}"}
+      %span Connect with Stripe
+  - else
+    Account connected with Stripe, now you can receive payments!

@@ -1,17 +1,43 @@
 - content_for :extra_javascript do
-  = javascript_include_tag "https://js.braintreegateway.com/v1/braintree.js"
+  = javascript_include_tag "https://js.stripe.com/v2/"
 - content_for :extra_javascript do
   :javascript
 
     $(document).ready(function() {
-      var braintreePaymentForm = $("#braintree-payment-form");
-      initialize_braintree_preauthorize_form("#{I18n.locale}", function beforeSubmit(next) {
-        var braintree = Braintree.create("#{braintree_client_side_encryption_key}");
-        braintree.encryptForm(braintreePaymentForm);
-        next();
+      Stripe.setPublishableKey("#{APP_CONFIG.stripe_publishable_key}");
+
+      var stripeResponseHandler = function(status, response) {
+        var $form = $('#payment-form');
+
+        if (response.error) {
+          // Show the errors on the form
+          $form.find('.payment-errors').text(response.error.message);
+          $form.find('button').prop('disabled', false);
+        } else {
+          console.log("voltou do stripe")
+          console.log(response.id);
+          // token contains id, last4, and card type
+          var token = response.id;
+          // Insert the token into the form so it gets submitted to the server
+          $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+          // and re-submit
+          $form.get(0).submit();
+        }
+      };
+
+      $('#payment-form').submit(function(e) {
+        console.log("submitiint")
+        var $form = $(this);
+
+        // Disable the submit button to prevent repeated clicks
+        $form.find('button').prop('disabled', true);
+
+        Stripe.card.createToken($form, stripeResponseHandler);
+
+        // Prevent the form from submitting with the default action
+        return false;
       });
 
-      braintreePaymentForm.show();
     });
 
 - content_for :javascript do
@@ -53,37 +79,8 @@
           %strong
             = t("conversations.show.total", total: humanized_money_with_symbol(sum))
 
-  = form_for preauthorize_form,
-    :url => form_action,
-      :method => "post",
-      :html => { :id => "braintree-payment-form", :class => "hidden" } do |form|
 
-    -# TODO Fix this, no respond_to?
-    - if preauthorize_form.respond_to?(:start_on) && preauthorize_form.respond_to?(:end_on)
-      = form.date_select :start_on, discard_day: true, discard_month: true, discard_year: true, default: preauthorize_form.start_on
-      = form.date_select :end_on, discard_day: true, discard_month: true, discard_year: true, default: preauthorize_form.end_on
-
-    .preauthorize-section
-      %h2
-        = t(".payment")
-
-      = render partial: "payments/braintree/credit_card_info", locals: {braintree_form: braintree_form}
-
-    .preauthorize-section
-      %h2
-        = t("conversations.new.optional_message_to", author_name: link_to(author[:display_name], person_path(id: author[:username]))).html_safe
-
-      .row
-        .col-12
-          = form.text_area :content, :class => "text_area"
-          = form.hidden_field :sender_id, :value => @current_user.id
-
-      - if @current_community.transaction_agreement_in_use
-        = render :partial => "listing_conversations/transaction_agreement_checkbox", locals: { form: form }
-
-      .row
-        .col-12
-          = form.button t("preauthorize_payments.edit.confirm_payment"), :class => "send_button"
+        = render partial: "payments/stripe/credit_card_info", locals: {form_action: form_action, preauthorize_form: preauthorize_form}
 
       .row
         .col-12

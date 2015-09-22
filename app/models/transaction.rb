@@ -20,6 +20,7 @@
 #  payment_gateway                   :string(255)      default("none"), not null
 #  listing_quantity                  :integer          default(1)
 #  payment_process                   :string(31)       default("none")
+#  stripe_token                      :text
 #
 # Indexes
 #
@@ -42,7 +43,8 @@ class Transaction < ActiveRecord::Base
     :payment_process,
     :commission_from_seller,
     :minimum_commission,
-    :listing_quantity
+    :listing_quantity, 
+    :stripe_token
     )
 
   attr_accessor :contract_agreed

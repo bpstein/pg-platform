@@ -410,4 +410,9 @@ class Listing < ActiveRecord::Base
   def payment_required_at?(community)
     transaction_type.price_field? && community.payments_in_use?
   end
+
+  def stripe_account_id
+    self.author.stripe_account.stripe_user_id
+  end
+    
 end

@@ -17,6 +17,14 @@ GIT
     paypal-sdk-permissions (1.96.3)
       paypal-sdk-core (~> 0.3.0)
 
+GIT
+  remote: https://github.com/stripe/stripe-ruby
+  revision: 7a0ead3fac5dd3c823b6b120028c9e3842485d72
+  specs:
+    stripe (1.27.0)
+      json (~> 1.8.1)
+      rest-client (~> 1.4)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -625,6 +633,7 @@ DEPENDENCIES
   spreadsheet
   statesman (~> 0.5.0)
   stringex (~> 2.5.2)
+  stripe!
   strong_parameters
   thinking-sphinx (~> 3.1.1)
   timecop

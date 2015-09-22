@@ -1,0 +1,20 @@
+%span.payment-errors
+
+= form_tag form_action, method: "post", id: "payment-form" do |form|
+  .form-row
+    %label
+      %span Card Number
+      %input{"data-stripe" => "number", :size => "20", :type => "text"}/
+  .form-row
+    %label
+      %span CVC
+      %input{"data-stripe" => "cvc", :size => "4", :type => "text"}/
+  .form-row
+    %label
+      %span Expiration (MM/YYYY)
+      %input{"data-stripe" => "exp-month", :size => "2", :type => "text", style: "width: 50px"}/ 
+      %input{"data-stripe" => "exp-year", :size => "4",:type => "text", style: "width: 90px"}/ 
+
+    = date_select :start_on, "", discard_day: true, discard_month: true, discard_year: true, default: preauthorize_form.start_on
+    = date_select :end_on, "", discard_day: true, discard_month: true, discard_year: true, default: preauthorize_form.end_on      
+  %button{:type => "submit"} Submit Payment

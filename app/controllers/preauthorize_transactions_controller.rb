@@ -1,9 +1,5 @@
 class PreauthorizeTransactionsController < ApplicationController
 
-  before_filter do |controller|
-   controller.ensure_logged_in t("layouts.notifications.you_must_log_in_to_send_a_message")
-  end
-
   before_filter :fetch_listing_from_params
   before_filter :ensure_listing_is_open
   before_filter :ensure_listing_author_is_not_current_user
@@ -102,16 +98,10 @@ class PreauthorizeTransactionsController < ApplicationController
         {}
       end
 
-    view =
-      case vprms[:payment_type]
-      when :braintree
-        "listing_conversations/preauthorize"
-      when :paypal
-        "listing_conversations/initiate"
-      else
-        raise ArgumentError.new("Unknown payment type #{vprms[:payment_type]} for booking")
-      end
+    view = "listing_conversations/preauthorize"
 
+    p "==== usuario logado ====="
+    p "==== usuario logado #{@current_user} ========"
     render view, locals: {
       preauthorize_form: PreauthorizeBookingForm.new({
           start_on: booking_data[:start_on],
@@ -128,11 +118,14 @@ class PreauthorizeTransactionsController < ApplicationController
   end
 
   def booked
-    payment_type = MarketplaceService::Community::Query.payment_type(@current_community.id)
-    conversation_params = params[:listing_conversation]
 
-    start_on = DateUtils.from_date_select(conversation_params, :start_on)
-    end_on = DateUtils.from_date_select(conversation_params, :end_on)
+    payment_type = MarketplaceService::Community::Query.payment_type(@current_community.id)
+    conversation_params = params
+
+    start_on = DateUtils.from_date_select(params[:start_on])
+    end_on = DateUtils.from_date_select(params[:end_on])
+
+
     preauthorize_form = PreauthorizeBookingForm.new(conversation_params.merge({
       start_on: start_on,
       end_on: end_on,
@@ -152,14 +145,14 @@ class PreauthorizeTransactionsController < ApplicationController
     end
 
     transaction_response = create_preauth_transaction(
-      payment_type: payment_type,
+      stripe_token: params[:stripeToken],
+      payment_type: "stripe",
       community: @current_community,
       listing: @listing,
       user: @current_user,
       listing_quantity: DateUtils.duration_days(preauthorize_form.start_on, preauthorize_form.end_on),
       content: preauthorize_form.content,
       use_async: request.xhr?,
-      bt_payment_params: params[:braintree_payment],
       booking_fields: {
         start_on: preauthorize_form.start_on,
         end_on: preauthorize_form.end_on
@@ -178,21 +171,12 @@ class PreauthorizeTransactionsController < ApplicationController
 
     transaction_id = transaction_response[:data][:transaction][:id]
 
-    case payment_type
-    when :paypal
-      MarketplaceService::Transaction::Command.transition_to(transaction_id, "initiated")
-      if (transaction_response[:data][:gateway_fields][:redirect_url])
-        return redirect_to transaction_response[:data][:gateway_fields][:redirect_url]
-      else
-        return render json: {
-          op_status_url: transaction_op_status_path(transaction_response[:data][:gateway_fields][:process_token]),
-          op_error_msg: t("error_messages.paypal.generic_error")
-        }
-      end
-    when :braintree
-      MarketplaceService::Transaction::Command.transition_to(transaction_id, "preauthorized")
-      return redirect_to person_transaction_path(:person_id => @current_user.id, :id => transaction_id)
-    end
+    transaction = Transaction.find(transaction_id)
+    transaction.update_attributes(stripe_token: params[:stripeToken])
+
+    MarketplaceService::Transaction::Command.transition_to(transaction_id, "preauthorized")
+    
+    return redirect_to person_transaction_path(:person_id => @current_user.id, :id => transaction_id)
 
   end
 
@@ -362,23 +346,6 @@ class PreauthorizeTransactionsController < ApplicationController
   end
 
   def create_preauth_transaction(opts)
-    gateway_fields =
-      if (opts[:payment_type] == :paypal)
-        # PayPal doesn't like images with cache buster in the URL
-        logo_url = Maybe(opts[:community])
-          .wide_logo
-          .select { |wl| wl.present? }
-          .url(:paypal, timestamp: false)
-          .or_else(nil)
-
-        {
-          merchant_brand_logo_url: logo_url,
-          success_url: success_paypal_service_checkout_orders_url,
-          cancel_url: cancel_paypal_service_checkout_orders_url(listing_id: opts[:listing].id)
-        }
-      else
-        BraintreeForm.new(opts[:bt_payment_params]).to_hash
-      end
 
     TransactionService::Transaction.create({
         transaction: {
@@ -393,9 +360,8 @@ class PreauthorizeTransactionsController < ApplicationController
           commission_from_seller: opts[:community].commission_from_seller,
           booking_fields: opts[:booking_fields]
         },
-        gateway_fields: gateway_fields
-      },
-      paypal_async: opts[:use_async])
+        gateway_fields: {stripe_token: opts[:stripeToken]}
+      })
   end
 
   def query_person_entity(id)

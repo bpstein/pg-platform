@@ -1,5 +1,11 @@
 default: &default_settings
 
+  stripe_client_id: ca_70UMQIqU15F9oRwO6ZKaONcOOnhU5BX2
+  stripe_account_callback_url: https://pg-platform.herokuapp.com/stripe_accounts/account_connection_callback
+
+  stripe_api_secret_key: sk_test_Jg02pw8cjbFJrMzypbMqv2dE
+  stripe_publishable_key: pk_test_dq6kpJ45wScAAILgQCGoVuuM
+
   # Fill here the domain where you will be running Sharetribe.
   # If you are running on localhost, you can write here "lvh.me:3000" (which redirects to localhost port 3000)
   # The community subdomains will be added to this top domain.
@@ -240,6 +246,8 @@ staging:
 
 development:
   <<: *default_settings
+  domain: "lvh.me:3000"
+  stripe_account_callback_url: http://pergear.lvh.me:3000/stripe_accounts/account_connection_callback
 
   # Usually it's easier to run development without SSL
   always_use_ssl: false

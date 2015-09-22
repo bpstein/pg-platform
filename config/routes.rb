@@ -99,6 +99,10 @@ Kassi::Application.routes.draw do
     match '/:person_id/settings/payments/paypal_account/show' => 'paypal_accounts#show', :as => :show_paypal_account_settings_payment
     match '/:person_id/settings/payments/paypal_account/create' => 'paypal_accounts#create', :as => :create_paypal_account_settings_payment
 
+    #STRIPE DETAILS
+    match '/stripe_accounts/account_connection_callback' => 'stripe_accounts#account_connection_callback', :as => :account_connection_callback_stripe
+    match '/:person_id/settings/payments/stripe/show' => 'stripe_accounts#show', :as => :show_stripe_settings_payment    
+
     scope :module => "api", :constraints => ApiRequest do
       resources :listings, :only => :index
 
