@@ -3,8 +3,8 @@ default: &default_settings
   stripe_client_id: ca_70UMQIqU15F9oRwO6ZKaONcOOnhU5BX2
   stripe_account_callback_url: https://pg-platform.herokuapp.com/stripe_accounts/account_connection_callback
 
-  stripe_api_secret_key: sk_test_Jg02pw8cjbFJrMzypbMqv2dE
-  stripe_publishable_key: pk_test_dq6kpJ45wScAAILgQCGoVuuM
+  stripe_api_secret_key: sk_test_KwEEUWzeQJt3K4wlfeVHo6C7
+  stripe_publishable_key: pk_test_vz5ORl7qP0ZHJp5LTokSliel
 
   # Fill here the domain where you will be running Sharetribe.
   # If you are running on localhost, you can write here "lvh.me:3000" (which redirects to localhost port 3000)
