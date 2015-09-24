@@ -1,6 +1,6 @@
 default: &default_settings
 
-  stripe_client_id: ca_70UMQIqU15F9oRwO6ZKaONcOOnhU5BX2
+  stripe_client_id: ca_72pA0x1vfI9A2SzLGVgbqDORUu638mBh
   stripe_account_callback_url: https://pg-platform.herokuapp.com/stripe_accounts/account_connection_callback
 
   stripe_api_secret_key: sk_test_KwEEUWzeQJt3K4wlfeVHo6C7
