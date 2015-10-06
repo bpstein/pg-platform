@@ -1,5 +1,9 @@
 class PreauthorizeTransactionsController < ApplicationController
 
+  before_filter do |controller|
+    controller.ensure_logged_in t("layouts.notifications.you_must_log_in_to_view_this_content") if controller.action_name == "book"
+  end
+
   before_filter :fetch_listing_from_params
   before_filter :ensure_listing_is_open
   before_filter :ensure_listing_author_is_not_current_user
@@ -100,8 +104,6 @@ class PreauthorizeTransactionsController < ApplicationController
 
     view = "listing_conversations/preauthorize"
 
-    p "==== usuario logado ====="
-    p "==== usuario logado #{@current_user} ========"
     render view, locals: {
       preauthorize_form: PreauthorizeBookingForm.new({
           start_on: booking_data[:start_on],
