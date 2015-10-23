@@ -1,10 +1,16 @@
 default: &default_settings
 
-  stripe_client_id: ca_72pA0x1vfI9A2SzLGVgbqDORUu638mBh
   stripe_account_callback_url: https://pg-platform.herokuapp.com/stripe_accounts/account_connection_callback
 
-  stripe_api_secret_key: sk_test_KwEEUWzeQJt3K4wlfeVHo6C7
-  stripe_publishable_key: pk_test_vz5ORl7qP0ZHJp5LTokSliel
+  #TEST
+  # stripe_client_id: ca_72pA0x1vfI9A2SzLGVgbqDORUu638mBh
+  # stripe_api_secret_key: sk_test_KwEEUWzeQJt3K4wlfeVHo6C7
+  # stripe_publishable_key: pk_test_vz5ORl7qP0ZHJp5LTokSliel
+
+  #PRODUCTION
+  stripe_client_id: ca_72pAqTn6FN6K6AMEc6UR6VU9BAPD8N0C
+  stripe_api_secret_key: sk_live_LK80hYqbVSnOE7qzTXjYyHiJ
+  stripe_publishable_key: pk_live_LEcZHpbY7GkypTh91T7u6GsV
 
   # Fill here the domain where you will be running Sharetribe.
   # If you are running on localhost, you can write here "lvh.me:3000" (which redirects to localhost port 3000)
@@ -235,10 +241,6 @@ default: &default_settings
 
 production: &production_settings
   <<: *default_settings
-
-  stripe_client_id: ca_72pAqTn6FN6K6AMEc6UR6VU9BAPD8N0C
-  stripe_api_secret_key: sk_live_LK80hYqbVSnOE7qzTXjYyHiJ
-  stripe_publishable_key: pk_live_LEcZHpbY7GkypTh91T7u6GsV
 
   # Set this to true if you want the rails server to serve static assets in production mode (images, JS etc.)
   # normally it is better to leave this for the web server (apache) to do.
