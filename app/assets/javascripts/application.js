@@ -46,7 +46,6 @@
 //= require homepage
 //= require order_manager
 //= require ajax_status
-//= require admin/expiration_notice
 //= require admin/custom_fields
 //= require admin/categories
 //= require admin/manage_members
