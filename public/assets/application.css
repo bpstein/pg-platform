@@ -6706,3 +6706,17 @@ textarea.text_area_code {
 .paypal-preferences-input {
     max-width: 5em;
 }
+
+.payment-errors {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    display: block;
+    width: 500px;
+    height: 58px;
+    display: none;
+    padding: 15px;
+    border-radius: 3px;
+    font-size: 22px;
+    margin-bottom: 20px;
+}

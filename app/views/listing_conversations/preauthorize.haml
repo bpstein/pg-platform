@@ -8,12 +8,13 @@
 
       var stripeResponseHandler = function(status, response) {
         var $form = $('#payment-form');
-
         if (response.error) {
           // Show the errors on the form
-          $form.find('.payment-errors').text(response.error.message);
+          $('.payment-errors').show();
+          $('.payment-errors').html(response.error.message);
           $form.find('button').prop('disabled', false);
         } else {
+          $('.payment-errors').hide();
           console.log("voltou do stripe")
           console.log(response.id);
           // token contains id, last4, and card type
@@ -53,6 +54,7 @@
   - author_link = link_to(author[:display_name], person_path(id: author[:username]))
 
   .preauthorize-section
+    .payment-errors
     %h2.preauthorize-details-title
       = t(".details")
 
